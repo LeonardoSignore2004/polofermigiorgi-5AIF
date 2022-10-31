@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 
+//Ho moficato il file :)
+//Ho di nuovo effettuato delle modifiche
+
 public class Contenitore {
 
     ArrayList <Thread> contenitore;
-
 
     //prima parte
     public Contenitore (){
