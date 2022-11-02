@@ -55,7 +55,7 @@ public class Contenitore {
     public void join_Name(String nome) throws InterruptedException{
         contenitore.get(ricerca(nome)).join();
     }
-    
+
     private int ricerca (String nome){
         boolean controllo = false;
         int x = -1;
