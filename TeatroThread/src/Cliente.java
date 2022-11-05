@@ -7,14 +7,15 @@ public class Cliente extends Thread{
         currentThread().setName(nome);
     }
 
-    public synchronized void  prenotazione (){
+    public void  prenotazione (){
+        synchronized (Cliente.class){
         if (Teatro.numPosti < Teatro.numCapienza){
             Teatro.numPosti++;
             Teatro.nomi.add(currentThread().getName());
             System.out.println("Sono " + this.nome + " ho prenotato");
         } else {
             System.out.println("Il teatro è al completo");
-        }
+        }}
     }
     public void run (){
         prenotazione();
