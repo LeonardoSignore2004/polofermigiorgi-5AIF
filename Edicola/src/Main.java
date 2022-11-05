@@ -13,6 +13,11 @@ public class Main {
         c3.start();
         c4.start();
 
+        c1.join();
+        c2.join();
+        c3.join();
+        c4.join();
+        
         System.out.print("------------------------------------------------------------- \n");
         System.out.println("il numero di matite è " + Edicola.numMatite );
         System.out.println("Il numero di quaderni è: "+ Edicola.numQuaderni);

@@ -27,15 +27,18 @@ public class Cliente extends Thread {
     }
 
     public synchronized void compra (){
-        
-        if (Edicola.numQuaderni >= numQuaderni & Edicola.numMatite >= numMatite){ 
+        synchronized (Cliente.class){
+          if (Edicola.numQuaderni >= numQuaderni & Edicola.numMatite >= numMatite){ 
             Edicola.numQuaderni -= numQuaderni;
             Edicola.numMatite -= numMatite;
-            //System.out.println("Sono " + currentThread().getName() +" - rimangono " + Edicola.numQuaderni + "quaderni"+" - rimangono " + Edicola.numMatite+ " matite");
+            System.out.println("Sono " + currentThread().getName() +" - rimangono " + Edicola.numQuaderni + "quaderni"+" - rimangono " + Edicola.numMatite+ " matite");
         } else {
             System.out.println("Il numero di matite e/o di quaderni è insufficente");
+        }  
         }
+        
     }
+
     public void run (){
         compra();
     }
